@@ -13,14 +13,14 @@ jobs:
     env:
       libraryName: ffmpeg
       installationPath: ffmpeg-installation
-      tagName: n5.0 # target tag
+      tagName: n5.1.1 # target tag
       mingwTargetZip: ffmpeg-${{ github.ref_name }}-x86_64-posix-seh-rev0-8.1.0.zip
     steps:
       - uses: actions/checkout@v3
       
       - name: git clone
         shell: cmd
-        run: git clone --recursive https://github.com/FFmpeg/FFmpeg.git && cd FFmpeg && git checkout ${{ env.tagName }}
+        run: git clone --recursive https://git.ffmpeg.org/ffmpeg.git && cd ffmpeg && git checkout ${{ env.tagName }}
         
       - name: Install MSYS2
         uses: msys2/setup-msys2@v2
@@ -48,19 +48,19 @@ jobs:
         shell: msys2 {0}
         run: |
             export PATH="${{ github.workspace }}/nasm-2.15.05:${{ github.workspace }}/mingw64:${{ github.workspace }}/mingw64/bin:${{ github.workspace }}/cmake-3.24.0-windows-x86_64/bin:${{ github.workspace }}/msys64/usr/bin:/usr/bin" &&
-            cd FFmpeg && g++ --version && pkg-config --version && ./configure --target-os=mingw64 --arch=x86_64 --disable-programs --disable-doc --disable-htmlpages --disable-manpages --disable-podpages --disable-txtpages --prefix="$(pwd)/${{ env.installationPath }}" &&
+            cd ffmpeg && g++ --version && pkg-config --version && ./configure --target-os=mingw64 --arch=x86_64 --disable-programs --disable-doc --disable-htmlpages --disable-manpages --disable-podpages --disable-txtpages --prefix="$(pwd)/${{ env.installationPath }}" &&
             mingw32-make.exe && mingw32-make.exe install 
             
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "${{ github.workspace }}/FFmpeg/${{ env.installationPath }}"
+          directory: "${{ github.workspace }}/ffmpeg/${{ env.installationPath }}"
           filename: "${{ env.mingwTargetZip }}"
         
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.workspace }}/FFmpeg/${{ env.installationPath }}/${{ env.mingwTargetZip }}"
+          artifacts: "${{ github.workspace }}/ffmpeg/${{ env.installationPath }}/${{ env.mingwTargetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
