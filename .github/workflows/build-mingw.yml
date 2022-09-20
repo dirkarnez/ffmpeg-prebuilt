@@ -34,7 +34,7 @@ jobs:
         
       - name: git clone pkg-config
         shell: cmd
-        run: git clone --recursive https://github.com/dirkarnez/pkg-config-action.git && xcopy /E /H /Y /C "pkg-config-action\*" "mingw64\bin"
+        run: git clone --recursive https://github.com/dirkarnez/pkg-config-action.git && xcopy /E /H /Y /C "${{ github.workspace }}\pkg-config-action\*" "${{ github.workspace }}\mingw64\bin" && "${{ github.workspace }}\mingw64\bin\pkg-config" --version
         
       - name: curl cmake-3.24.0-windows-x86_64.zip
         shell: cmd
