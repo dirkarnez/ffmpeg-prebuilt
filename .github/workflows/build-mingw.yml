@@ -26,7 +26,7 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
-          install: make autoconf automake libtool autogen perl git diffutils
+          install: make autoconf automake libtool autogen perl git diffutils yasm
           
 #       - name: curl x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z
 #         shell: cmd
@@ -44,9 +44,9 @@ jobs:
         shell: cmd
         run: cd /d ${{ github.workspace }} && curl https://github.com/Kitware/CMake/releases/download/v3.24.0/cmake-3.24.0-windows-x86_64.zip -L --output cmake-3.24.0-windows-x86_64.zip && dir && 7z.exe x cmake-3.24.0-windows-x86_64.zip
       
-      - name: curl nasm-2.15.05-win64.zip
-        shell: cmd
-        run: cd /d ${{ github.workspace }} && curl https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/win64/nasm-2.15.05-win64.zip -L --output nasm-2.15.05-win64.zip && dir && 7z.exe x nasm-2.15.05-win64.zip
+#       - name: curl nasm-2.15.05-win64.zip
+#         shell: cmd
+#         run: cd /d ${{ github.workspace }} && curl https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/win64/nasm-2.15.05-win64.zip -L --output nasm-2.15.05-win64.zip && dir && 7z.exe x nasm-2.15.05-win64.zip
         
       - name: set PATH, check mingw version, cmake generate, build and install
         shell: msys2 {0}
