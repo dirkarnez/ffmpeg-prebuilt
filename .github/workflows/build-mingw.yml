@@ -21,7 +21,7 @@ jobs:
       - name: git clone
         shell: cmd
         run: git clone --recursive https://github.com/FFmpeg/FFmpeg.git && cd FFmpeg && git checkout ${{ env.tagName }}
-      
+        
       - name: Install MSYS2
         uses: msys2/setup-msys2@v2
         with:
@@ -31,6 +31,10 @@ jobs:
       - name: curl x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z
         shell: cmd
         run:  cd /d ${{ github.workspace }} && curl https://github.com/2641797006/c/blob/master/GCC-zip/x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z?raw=true -L --output x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z && dir && 7z.exe x x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z
+        
+      - name: git clone pkg-config
+        shell: cmd
+        run: git clone --recursive https://github.com/dirkarnez/pkg-config-action.git && xcopy /E /H /Y /C "pkg-config-action\*" "mingw64\bin"
         
       - name: curl cmake-3.24.0-windows-x86_64.zip
         shell: cmd
