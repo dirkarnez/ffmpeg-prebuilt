@@ -5,3 +5,4 @@ ffmpeg-prebuilt
 
 ### Reference
 - [rdp/ffmpeg-windows-build-helpers: Helper script for cross compiling some media tools for windows, like customizable ffmpeg.exe (with or without non-free components, etc), and some other bonuses like mplayer, mp4box, mxf, etc.](https://github.com/rdp/ffmpeg-windows-build-helpers)
+- [CompilationGuide/Ubuntu – FFmpeg](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
