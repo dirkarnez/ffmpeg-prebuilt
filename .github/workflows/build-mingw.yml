@@ -13,7 +13,7 @@ jobs:
     env:
       libraryName: ffmpeg
       installationPath: ffmpeg-installation
-      tagName: n5.1.1 # target tag
+      tagName: n5.0 # target tag
       mingwTargetZip: ffmpeg-${{ github.ref_name }}-x86_64-posix-seh-rev0-8.1.0.zip
     steps:
       - uses: actions/checkout@v3
