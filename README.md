@@ -14,3 +14,6 @@ WIP
   - [LiveSalton/eleph-video-compressor: 一款基于ffmpeg的视频压缩器，登录谷歌市场](https://github.com/LiveSalton/eleph-video-compressor)
   - [abdullahfarwees/screen-recorder-ffmpeg-cpp: *Multimedia project* A screen recording application to capture your desktop and store in a video format. Click here to watch the demo](https://github.com/abdullahfarwees/screen-recorder-ffmpeg-cpp)
 
+
+### Playground
+- [dirkarnez/ffmpeg-playground](https://github.com/dirkarnez/ffmpeg-playground)
