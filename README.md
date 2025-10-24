@@ -2,6 +2,9 @@ ffmpeg-prebuilt
 ===============
 WIP
 
+### `CMakeLists.txt`s
+- https://github.com/google/ExoPlayer/blob/dd430f7053a1a3958deea3ead6a0565150c06bfc/extensions/ffmpeg/src/main/jni/CMakeLists.txt
+
 ### Reference
 - Compilation
   - [**m-ab-s/media-autobuild_suite: This Windows Batchscript helps setup a Mingw-w64 compiler environment for building ffmpeg and other media tools under Windows.**](https://github.com/m-ab-s/media-autobuild_suite)
