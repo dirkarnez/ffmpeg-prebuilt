@@ -1,7 +1,9 @@
 ffmpeg-prebuilt
 ===============
 WIP
-
+### TODOs
+- [ ] Full static library prebuilt
+  - [FFmpeg静态编译—FFmpeg编译教程 · FFmpeg原理](https://ffmpeg.xianwaizhiyin.net/compile-ffmpeg/static.html)
 ### `CMakeLists.txt`s
 - https://github.com/google/ExoPlayer/blob/dd430f7053a1a3958deea3ead6a0565150c06bfc/extensions/ffmpeg/src/main/jni/CMakeLists.txt
 
